@@ -19,7 +19,7 @@ func main() {
 	var listenport = flag.Int("port", 8080, "Port to listen on")
 	flag.Parse()
 
-	if(*httpdir == "") {
+	if *httpdir == "" {
 		fmt.Printf("Error: Directory not specified")
 		os.Exit(1)
 	}
@@ -35,7 +35,6 @@ func main() {
 		fmt.Printf("Error: %v cannot be converted to absolute path\n", *httpdir)
 		os.Exit(1)
 	}
-
 
 	var listenaddr string = fmt.Sprintf("%s:%d", *listenip, *listenport)
 
